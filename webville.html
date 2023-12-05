@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<script>
+        function init() {
+      var loc = window.location.href;
+      var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+      var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                            loc + '?profile=css3';
+      document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+      document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+    }
+    window.onload = init;
+</script>
+<head>
+<title>99 cans of soda</title>
+<meta charset="utf-8">
+<style>
+    body {
+      font-family: Georgia, serif;
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+<script>
+// substitute your favorite drink below
+var drink = "Soda";
+var lyrics = "";
+var cans = 99;
+while (cans > 0) {
+	lyrics = lyrics + cans + " cans of " + drink + " on the wall <br>";
+	lyrics = lyrics + cans + " cans of " + drink + "<br>";
+	lyrics = lyrics + "Take one down, pass it around, <br>";
+	if (cans > 1) {
+		lyrics = lyrics + (cans-1) + " cans of " + drink + " on the wall <br>";
+	}
+	else {
+		lyrics = lyrics + "No more cans of " + drink + " on the wall <br>";
+	}
+	cans = cans - 1;
+}
+document.write(lyrics);
+</script>
+<footer>
+    <a id="vLink1"><strong> HTML </strong> Valid! </a> |
+    <a id="vLink2"><strong> CSS </strong> Valid! </a>
+</footer>
+</body>
+</html>
