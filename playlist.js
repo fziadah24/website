@@ -3,12 +3,14 @@ function setUpButtonHandler() {
     button.onclick = handleButtonClick;
 }
 
+
 function handleButtonClick() {
     let textInput = document.getElementById("songTextInput");
     let songName = textInput.value;
     if (songName == "") {
         alert("Please enter a song!");
-    } else {
+    }
+    else {
        console.log("Adding " + songName);
         let li = document.createElement("li");
 		li.innerHTML = songName;
