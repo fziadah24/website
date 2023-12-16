@@ -1,6 +1,7 @@
-function setUpButtonHandler() {
+function init() {
     let button = document.getElementById("addButton");
     button.onclick = handleButtonClick;
+	alert("No song entered! Please fill in the box.") ; textInput.focus();
 }
 
 function handleButtonClick() {
@@ -9,7 +10,7 @@ function handleButtonClick() {
     if (songName == "") {
         alert("Please enter a song!");
     } else {
-       console.log("Adding " + songName);
+       else("Adding " + songName);
         let li = document.createElement("li");
 		li.innerHTML = songName;
 		let ul = document.getElementById("playlist");
@@ -20,7 +21,7 @@ function handleButtonClick() {
     }
 }
 function save(item) {
-	var playlistArray = getStoreArray("playlist");
+	let playlistArray = getStoreArray("playlist");
 	playlistArray.push(item);
 	localStorage.setItem("playlist", JSON.stringify(playlistArray));
 }
