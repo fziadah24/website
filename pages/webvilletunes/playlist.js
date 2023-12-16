@@ -1,56 +1,20 @@
+window.onload = init;
 function init() {
-    let button = document.getElementById("addButton");
+    var button = document.getElementById("addButton"); 
     button.onclick = handleButtonClick;
-	alert("No song entered! Please fill in the box.") ; textInput.focus();
+    loadPlaylist();
 }
 
 function handleButtonClick() {
-    let textInput = document.getElementById("songTextInput");
-    let songName = textInput.value;
-    if (songName == "") {
-        alert("Please enter a song!");
-    } else {
-       else("Adding " + songName);
-        let li = document.createElement("li");
-		li.innerHTML = songName;
-		let ul = document.getElementById("playlist");
-		ul.appendChild(li);
-	      ul.style.backgroundColor = "#899ff0";
-	      ul.style.color = "black";
-	    save(songName);
-    }
-}
-function save(item) {
-	let playlistArray = getStoreArray("playlist");
-	playlistArray.push(item);
-	localStorage.setItem("playlist", JSON.stringify(playlistArray));
-}
+    var textInput = document.getElementById("songTextInput");
+    var songName = textInput.value;
+    var li = document.createElement("li"); 
+    li.innerHTML = songName;
+    var ul = document.getElementById("playlist"); 
+    ul.appendChild(li);
+    save(songName);
 
-function loadPlaylist() {
-	var playlistArray = getSavedSongs();
-	var ul = document.getElementById("playlist");
-	if (playlistArray != null) {
-		for (var i = 0; i < playlistArray.length; i++) {
-			var li = document.createElement("li");
-			li.innerHTML = playlistArray[i];
-			ul.appendChild(li);
-		}
-	}
 }
-
-function getSavedSongs() {
-	return getStoreArray("playlist");
-}
-
-function getStoreArray(key) {
-	var playlistArray = localStorage.getItem(key);
-	if (playlistArray == null || playlistArray == "") {
-		playlistArray = new Array();
-	}
-	else {
-		playlistArray = JSON.parse(playlistArray);
-	}
-	return playlistArray;
 }
 function setValidationLinks() {
   let loc = window.location.href;
