@@ -2,39 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <title>Webville Tunes</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="playlist.js"></script>
-    <script>
-       function init() {
-       setValidationLinks();
-       setUpButtonHandler();    
-    }
+  <meta charset="utf-8">
+  <title>Webville Tunes</title>
+  <script src="playlist.js"></script>
+  <script src="playlist_store.js"></script>
+  <link rel = "stylesheet" href="playlist.css">
 
-    window.onload = init;
-    </script>
 </head>
 
 <body>
-<h1>Webville Tunes</h1>
+    <form>
+        <input type="text" id="songTextInput" size="40" placeholder="Song name">
+        <input type="button" id="addButton" value="Add Song">
+    </form>
 
-<main>
-<form>
-  <input type="text" id="songTextInput" size="40" placeholder="Song name">
-  <input type="button" id="addButton" value="Add Song">
-</form>
-
-<ul id="playlist">
-</ul>
-</main>
-
-<footer>
-<a id="vLink1">
-<strong> HTML </strong> Valid! </a> | 
-<a id="vLink2">
-<strong> CSS </strong> Valid! </a>
-</footer> 
+    <ul id="playlist">
+        
+    </ul>
 
 </body>
+
 </html>
