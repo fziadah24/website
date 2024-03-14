@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p>Click the button to get your position.</p>
+        <button onclick="getLocation()">My Location</button>
+        <p id="test"></p>
+        <script>
+            var latlon = document.getElementById("test");
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition, showError);
+                } else {
+                    latlon.innerHTML = "Geolocation is not supported by this browser.";
+                }
+            }
+            function showPosition(position) {
+                latlon.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+            }
+            function showError(error) {
+                switch (error.code) {
+                    case error.PERMISSION_DENIED:
+                        latlon.innerHTML = "User denied the request for Geolocation.";
+                        break;
+                    case error.POSITION_UNAVAILABLE:
+                        latlon.innerHTML = "Location information is unavailable.";
+                        break;
+                    case error.TIMEOUT:
+                        latlon.innerHTML = "The request to get user location timed out.";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        latlon.innerHTML = "An unknown error occurred.";
+                        break;
+                }
+            }
+            function init() {
+              var loc = window.location.href;
+              var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+              var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                                    loc + '?profile=css3';
+              document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+              document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+            }
+            window.onload = init;
+        </script>
+    </body>
+    <footer>
+        <hr>
+        <a id="vLink1">
+        <strong> HTML </strong> Valid! </a> |
+        <a id="vLink2">
+        <strong> CSS </strong> Valid! </a>
+        </footer>
+</html>
