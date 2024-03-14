@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400;700&display=swap');
+
 
 *{
     box-sizing: border-box;
@@ -72,7 +72,7 @@ button{
     font-weight: 600;
 }
 button:hover{
-    background: #68784F;
+    background: #ffffff;
     transition: 0.5s;
 }
 button:hover{
@@ -99,7 +99,7 @@ body{
     background: #718355;
 }
 a:link{
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
 }
 a:hover{
@@ -107,7 +107,7 @@ a:hover{
     text-decoration: none;
 }
 .about-wrapper{
-    background: #68784F;
+    background: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,7 +120,7 @@ a:hover{
     text-align: center;
 }
 .about-left-content{
-    box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+    box-shadow: 0px 0px 18px -1px rgba(255, 255, 255, 0.39);
     -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
     -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
 }
@@ -147,7 +147,7 @@ a:hover{
 .shadow::after{
     content: "";
     position: absolute;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.4);
     left: 50%;
     transform: translateX(-50%);
     bottom: -20px;
@@ -187,7 +187,7 @@ a:hover{
 }
 .icons li{
     list-style-type: none;
-    background:#68784F;
+    background:#ffffff;
     color: #fff;
     width: 40px;
     height: 40px;
@@ -202,7 +202,7 @@ a:hover{
 
 }
 .icons li:hover{
-    background: black;
+    background: rgb(255, 255, 255);
     color: white;
 }
 .about-right{
@@ -220,7 +220,7 @@ a:hover{
     text-transform: uppercase;
 }
 .about-right h1 span{
-    color: #68784F;
+    color: #ffffff;
 }
 .about-right h2{
     font-weight:600 ;
@@ -245,13 +245,13 @@ a:hover{
 .btn.btn-pink{
     background: #ffffff;
     color: #fff;
-    border-color: #68784F;
+    border-color: #ffffff;
     transition: all 0.5s ease-in-out;
 }
 .btn.btn-pink:hover{
     background: transparent;
-    border-color: #68784F;
-    color: #000;
+    border-color: #ffffff;
+    color: #ffffff;
 }
 .btn.btn-white{
     transition: all 0.5s ease-in-out;
@@ -289,7 +289,7 @@ a:hover{
     justify-content: center;
 }
 form{
-    background: #68784F;
+    background: #ffffff;
     ;
     display: flex;
     flex-direction: column;
@@ -299,7 +299,7 @@ form{
     border-radius: 10px;
 }
 form h3{
-    color: #000;
+    color: #ffffff;
     font-weight: 800;
     margin-bottom: 20px;
 }
@@ -390,7 +390,7 @@ button2{
     padding: 15px;
     text-align: center;
     border-radius: 25px;
-    color: black;
+    color: rgb(255, 255, 255);
     border: 2px;
     font-size: 20px;
     cursor: pointer;
@@ -428,14 +428,14 @@ button3{
     
 }
 button3:hover{
-    background: #68784F;
+    background: #ffffff;
     transition: 0.5s;
 }
 button3:hover{
     color: white;
 }
 button2 a{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 
 .button-wrapper {
