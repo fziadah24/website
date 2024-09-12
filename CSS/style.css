@@ -1,0 +1,84 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden; /* Prevents scrolling */
+    position: relative;
+}
+
+/* Fullscreen background video */
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover; /* Ensures the video covers the entire screen */
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    z-index: 1; /* Ensures navigation stays above the video */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin-right: 20px;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+nav ul li a:hover {
+    color: #FF4081; /* Pink hover effect */
+}
+
+/* Centered Main Heading */
+h1 {
+    font-size: 80px;
+    color: white;
+    text-align: center;
+    letter-spacing: 5px;
+    font-weight: bold;
+    position: relative;
+    z-index: 1; /* Ensures the heading stays above the video */
+}
+
+h1 span {
+    color: #FF4081; /* Pink for "website" text */
+    font-style: italic;
+    font-size: 40px;
+}
+
+/* Logo or flower image */
+#logo {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensures the logo stays above the video */
+}
