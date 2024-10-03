@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Webville Cinema</title>
+    <link rel="stylesheet" href="cinema.css">
+</head>
+
+<body>
+    <div id="main_container_div">
+        <div id="div3"></div>
+        <div id="div2"></div>
+    </div>
+
+    <div class="overlay-text">Welcome to the Webville Cinema!</div>
+
+<script>
+var movie1 = {
+title: "Priscilla",
+genre: "Romance/Musical",
+rating: 2.2,
+showtimes: ["3:00pm", "6:30pm", "11:00pm"]
+};
+
+
+var movie2 = {
+title: "Mean Girls",
+genre: "Comedy/Musical",
+rating: 3,
+showtimes: ["2:00pm", "5:00pm"]
+};
+
+
+function getNextShowing(movie) {
+    var now = new Date().getTime();
+
+    for (var i = 0; i < movie.showtimes.length; i++) {
+        var showtime = getTimeFromString(movie.showtimes[i]);
+        if ((showtime - now) > 0) {
+            return "Next showing of " + movie.title + " is " + movie.showtimes[i];
+        }
+    }
+    return null;
+}
+
+function getTimeFromString(timeString) {
+    var theTime = new Date();
+    var time = timeString.match(/(\d+)(?::(\d\d))?\s*(p?)/); 
+    theTime.setHours( parseInt(time[1]) + (time[3] ? 12 : 0) ); 
+    theTime.setMinutes( parseInt(time[2]) || 0 );
+    return theTime.getTime();
+}
+
+var nextShowing = getNextShowing(movie1);
+alert(nextShowing);
+nextShowing = getNextShowing(movie2);
+alert(nextShowing);
+
+var asiansmovie = {
+title: "Crazy Rich Asians",
+genre: "Comedy/Romance",
+rating: 5,
+showtimes: ["1:00pm", "5:00pm", "7:00pm"] }
+var nextShowing = getNextShowing(asiansmovie); alert(nextShowing);
+
+function Movie(title, genre, rating, showtimes, getTimeFromString) {
+    this.title = title;
+    this.genre = genre;
+    this.rating = rating;
+    this.showtimes = showtimes;
+    this.getNextShowing = function (){
+        var now = new Date().getTime();
+        for (var i = 0; i < this.showtimes.length; i++) {
+            var showtime = getTimeFromString(this.showtimes[i]);
+            if ((showtime - now) > 0) { 
+                return "Next showing of " + this.title + " is " + this.showtimes[i];
+        }       
+    } 
+    return null;
+    }
+}
+
+var Smile = new Movie('Smile', 'Horror', '10', ["5:00pm", "10:00pm"], getTimeFromString)
+var SmileMovie = Smile.getNextShowing()
+alert(SmileMovie)
+
+ </script>
+
+</body>
+</html>

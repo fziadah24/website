@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Webville Tunes</title>
+    <link rel="stylesheet" href="playlist.css">
+    <script src="playlist.js"></script>
+    <script src="playlist_store.js"></script>
+  </head>
+<body>
+  <script>
+    function init() {
+    setValidationLinks();
+    setUpButtonHandler();    
+ }
+
+ window.onload = init;
+ </script>
+
+<script>
+function init() {
+ var loc = window.location.href;
+ var HTMLvalidLinkStr = 'http://validator.w3.org/check?uri=' + loc;
+ var CSSvalidLinkStr = 'http://jigsaw.w3.org/css-validator/validator?uri=' +
+                       loc + '?profile=css3';
+ document.getElementById("vLink1").setAttribute("href", HTMLvalidLinkStr);
+ document.getElementById("vLink2").setAttribute("href", CSSvalidLinkStr);
+}
+window.onload = init;
+</script>
+<h1>Webville Tunes</h1>
+
+<main>
+<form>
+  <input type="text" id="songTextInput" size="40" placeholder="Song name">
+  <input type="button" id="addButton" value="Add Song">
+</form>
+
+<ul id="playlist">
+</ul>
+</main>
+
+<footer>
+<a id="vLink1">
+<strong> HTML </strong> Valid! </a> | 
+<a id="vLink2">
+<strong> CSS </strong> Valid! </a>
+</footer> 
+
+</body>
+</html>
