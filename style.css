@@ -32,15 +32,15 @@ nav{
 nav a{
     text-decoration: none;
     text-transform: uppercase;
-    color: white;
+    color: rgb(255, 255, 255);
     font-weight: 600;
 }
 nav a:hover{
-    background: white;
+    background: rgb(226, 109, 185);
     transition: 0.5s;
 }
 a:hover{
-    background: #ffffff;
+    background: rgb(226, 109, 185);
     transition: 0.5s;
 }
 nav a:hover{
